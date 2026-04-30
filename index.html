@@ -68,7 +68,7 @@
 
     <!-- Audio -->
     <audio id="bg-music" loop>
-      <source src="Tera_Khwab.mp3" type="audio/mpeg" />
+      <source src="#" type="audio/mpeg" />
       <source
         src="https://cdn.pixabay.com/download/audio/2022/10/18/audio_31c2730e64.mp3?filename=romantic-piano-124970.mp3"
         type="audio/mpeg"
@@ -81,7 +81,7 @@
         id="music-btn"
         class="w-10 h-10 rounded-full glass flex items-center justify-center text-rose hover:bg-white/10 transition-all border border-rose/30"
       >
-        <i class="fas fa-music"></i>
+        <i class="fas fa-music" id="music-icon"></i>
       </button>
     </div>
 
@@ -147,7 +147,30 @@
       <div id="result-card" class="glass">
         <span class="result-emoji" id="result-emoji">❤️</span>
         <p class="result-text" id="result-text"></p>
-        <button class="cta-btn" id="close-modal-btn">Aww 🥰</button>
+        <div
+          style="
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 20px;
+          "
+        >
+          <button
+            class="cta-btn"
+            id="home-btn"
+            style="
+              background: linear-gradient(
+                135deg,
+                rgba(189, 224, 254, 0.7),
+                rgba(162, 210, 255, 0.7)
+              );
+              color: #0c5da6;
+            "
+          >
+            Home 🏠
+          </button>
+          <button class="cta-btn" id="close-modal-btn">Aww 🥰</button>
+        </div>
       </div>
     </div>
 

@@ -33,6 +33,7 @@ document.addEventListener("mousemove", (e) => {
 // ── MUSIC ──
 const audio = document.getElementById("bg-music");
 const musicBtn = document.getElementById("music-btn");
+const musicIcon = document.getElementById("music-icon");
 let playing = false;
 
 function startMusic() {
@@ -43,6 +44,8 @@ function startMusic() {
         .then(() => {
           playing = true;
           musicBtn.classList.add("playing");
+          musicIcon.classList.remove("fa-music");
+          musicIcon.classList.add("fa-pause");
         })
         .catch(() => {});
     }
@@ -56,10 +59,11 @@ musicBtn.addEventListener("click", () => {
     audio.pause();
     playing = false;
     musicBtn.classList.remove("playing");
+    musicIcon.classList.add("fa-music");
+    musicIcon.classList.remove("fa-pause");
   }
 });
 
-// Attempt to play by default
 startMusic();
 // Also play on first user interaction in case autoplay is blocked
 document.body.addEventListener("click", startMusic, { once: true });
@@ -223,6 +227,21 @@ yesBtnEl.addEventListener("click", () => {
 
 document.getElementById("close-modal-btn").addEventListener("click", () => {
   document.getElementById("result-modal").classList.remove("visible");
+});
+
+// ── HOME BUTTON ──
+document.getElementById("home-btn").addEventListener("click", () => {
+  document.getElementById("result-modal").classList.remove("visible");
+  questionScreen.classList.add("hidden");
+  introScreen.classList.remove("hidden");
+  noBtn.style.display = "none";
+  noVisible = false;
+  noClicks = 0;
+  noScale = 1;
+  yesBtnEl.style.width = "160px";
+  yesBtnEl.style.height = "80px";
+  yesBtnEl.style.fontSize = "1.3rem";
+  yesBtnEl.style.borderRadius = "24px";
 });
 
 // ── SPARKLE FX ──
